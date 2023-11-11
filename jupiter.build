@@ -1,0 +1,21 @@
+#!/bin/sh
+
+PACKAGE=jupiter
+ORIGPATH=$PWD
+
+cd $SLACKTRACKSCRATCHDIR
+cp -r $ORIGPATH/* .
+
+KERNEL=${KERNEL:-"$(uname -r)"}
+VERSION=1.0
+chown -R root:root .
+chmod -R og-w .
+
+make clean && make && make install
+
+mkdir -vpm755 /usr/doc/${PACKAGE}-${VERSION}
+cp -favv README.md /usr/doc/${PACKAGE}-${VERSION}
+
+rm -fr /install
+mkdir -vpm755 /install
+sed "s%@KERNEL@%$KERNEL%" ${ORIGPATH}/doinst.sh > /install/doinst.sh

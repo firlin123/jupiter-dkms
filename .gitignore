@@ -1,0 +1,12 @@
+*.cmd
+*.ko
+*.log
+*.mod.c
+*.o
+*~
+.tmp*/
+MANIFEST
+Module.symvers
+debian/tmp/*
+modules.order
+dkms.conf
