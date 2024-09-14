@@ -1,0 +1,18 @@
+Source: jupiter
+Section: kernel
+Priority: optional
+Maintainer: firlin123 <firlin123@gmail.com>
+Build-Depends:
+  debhelper-compat (=13),
+  dh-sequence-dkms,
+Standards-Version: 4.6.2
+Homepage: https://github.com/firlin123/jupiter-dkms
+Vcs-Git: https://github.com/firlin123/jupiter-dkms.git
+Vcs-Browser: https://github.com/firlin123/jupiter-dkms
+Rules-Requires-Root: no
+
+Package: jupiter-dkms
+Architecture: amd64
+Depends: ${misc:Depends}
+Conflicts: steamdeck-dkms
+Description: Jupiter ACPI platform driver (DKMS)
